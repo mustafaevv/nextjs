@@ -1,0 +1,76 @@
+{
+  "pizzas": [
+    {
+      "id": 0,
+      "image": "https://dodopizza.azureedge.net/static/Img/Products/f035c7f46c0844069722f2bb3ee9f113_584x584.jpeg",
+      "name": "Пепперони Фреш с перцем",
+      "types": ["тонкое", "традиционное"],
+      "sizes": [25, 30, 40],
+      "price": 800,
+      "category": "meat"
+    },
+    {
+      "id": 1,
+      "image": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/2ffc31bb-132c-4c99-b894-53f7107a1441.jpg",
+      "name": "Сырная",
+      "types": ["тонкое", "традиционное"],
+      "sizes": [25, 30, 40],
+      "price": 550,
+      "category": "vegetarian"
+    },
+    {
+      "id": 2,
+      "image": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/6652fec1-04df-49d8-8744-232f1032c44b.jpg",
+      "name": "Цыпленок барбекю",
+      "types": ["тонкое", "традиционное"],
+      "sizes": [25, 30, 40],
+      "price": 250,
+      "category": "vegetarian"
+    },
+    {
+      "id": 3,
+      "image": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/af553bf5-3887-4501-b88e-8f0f55229429.jpg",
+      "name": "ЦКисло-сладкий цыпленок",
+      "types": ["тонкое", "традиционное"],
+      "sizes": [25, 30, 40],
+      "price": 700,
+      "category": "grill"
+    },
+    {
+      "id": 4,
+      "image": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg",
+      "name": "Чизбургер-пицца",
+      "types": ["тонкое", "традиционное"],
+      "sizes": [25, 30, 40],
+      "price": 380,
+      "category": "acute"
+    },
+    {
+      "id": 5,
+      "image": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/1e1a6e80-b3ba-4a44-b6b9-beae5b1fbf27.jpg",
+      "name": "Крэйзи пепперони",
+      "types": ["тонкое", "традиционное"],
+      "sizes": [25, 30, 40],
+      "price": 450,
+      "category": "grill"
+    },
+    {
+      "id": 6,
+      "image": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/d2e337e9-e07a-4199-9cc1-501cc44cb8f8.jpg",
+      "name": "Пепперони",
+      "types": ["тонкое", "традиционное"],
+      "sizes": [25, 30, 40],
+      "price": 720,
+      "category": "vegetarian"
+    },
+    {
+      "id": 7,
+      "image": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/d48003cd-902c-420d-9f28-92d9dc5f73b4.jpg",
+      "name": "Маргарита",
+      "types": ["тонкое", "традиционное"],
+      "sizes": [25, 30, 40],
+      "price": 600,
+      "category": "closed"
+    }
+  ]
+}
