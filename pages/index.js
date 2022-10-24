@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import Head from "next/head";
 
 import Container from "../layout/Container";
 import HeaderLogo from "../src/components/HeaderLogo";
@@ -30,9 +29,7 @@ export default function Home() {
 
   return (
     <>
-      <Head>
-        <title>React Pizza next.js.v</title>
-      </Head>
+     
       <Container>
         <HeaderLogo />
         <NavLink />

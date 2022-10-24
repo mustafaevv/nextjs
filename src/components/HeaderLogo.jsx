@@ -3,7 +3,7 @@ import Link from "next/link";
 import styled from "styled-components";
 import { CgShoppingCart } from "react-icons/cg";
 import { useSelector } from "react-redux";
-import { getItemCount } from "./redux/cart";
+import { getItemCount } from "../redux/cart";
 
 const Header = styled.header`
   display: flex;
@@ -38,7 +38,7 @@ const Button = styled.button`
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  max-width: 150px;
+  min-width: 150px;
   width: 100%;
   line-height: 50px;
   border: none;
@@ -57,25 +57,29 @@ const BtnLink = styled.a`
 
 const HeaderLogo = () => {
   const cartITemCount = useSelector(getItemCount);
+  const { cart } = useSelector((state) => state);
+  const items = Object.values(cart);
+  const totalPrice = items.reduce(
+    (acc, item) => acc + item.price * item.quantity,
+    0
+  );
   return (
     <Header>
       <Link href="/">
         <Content>
-          <Content>
-            <div>
-              <Image src="/images/logo.png" width={38} height={38} />
-            </div>
-            <Item>
-              <p>REACT PIZZA</p>
-              <span>самая вкусная пицца во вселенной</span>
-            </Item>
-          </Content>
+          <div>
+            <Image src="/images/logo.png" width={38} height={38} />
+          </div>
+          <Item>
+            <p>REACT PIZZA</p>
+            <span>самая вкусная пицца во вселенной</span>
+          </Item>
         </Content>
       </Link>
       <Link href="/cart">
         <BtnLink>
           <Button>
-            520 ₽
+            {totalPrice} ₽
             <CgShoppingCart />
             {Boolean(cartITemCount) ? <p>{cartITemCount}</p> : <p>0</p>}
           </Button>

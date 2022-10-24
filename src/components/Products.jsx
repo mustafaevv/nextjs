@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
-import { addToCart } from "./redux/cart";
+
+import { addToCart } from "../redux/cart";
 
 const Block = styled.div`
   max-width: 300px;
@@ -15,7 +16,6 @@ const Img = styled.img`
 `;
 
 const Title = styled.h4`
-  font-family: "Proxima Nova";
   font-weight: 800;
   font-size: 22px;
   text-align: center;
@@ -73,9 +73,9 @@ const Info = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  min-height: 80px;
 `;
 const Price = styled.p`
-  font-family: "Proxima Nova";
   font-style: normal;
   font-weight: 700;
   font-size: 22px;
@@ -85,21 +85,25 @@ const Price = styled.p`
 const Added = styled.button`
   max-width: 135px;
   width: 100%;
-  font-family: "Proxima Nova";
-  font-style: normal;
+  color: ${({ select }) => (select ? "#fe5f1e" : "#fff")};
+  background: ${({ select }) => (select ? "#fff" : "#fe5f1e")};
+  border: ${({ select }) => (select ? "1px solid #fe5f1e" : "none")};
   font-weight: 700;
   line-height: 40px;
-  color: #ffffff;
-  background: #fe5f1e;
-  font-size: 20px;
-  border: none;
+  font-size: 18px;
   border-radius: 30px;
   cursor: pointer;
 `;
 
 const Products = ({ data }) => {
   const dispatch = useDispatch();
-  const handleSelect = () => dispatch(addToCart(data));
+  const [select, setSelect] = useState(false);
+  
+  const handleSelect = () => {
+    dispatch(addToCart(data));
+    setSelect((state) => !state);
+  };
+
   return (
     <Block>
       <Img src={data.image} alt={data.name} />
@@ -117,7 +121,7 @@ const Products = ({ data }) => {
       </Items>
       <Info>
         <Price>от {data.price} ₽</Price>
-        <Added onClick={handleSelect}>
+        <Added select={select} onClick={handleSelect}>
           <span>+</span> Добавить
         </Added>
       </Info>
