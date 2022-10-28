@@ -29,7 +29,7 @@ const Text = styled.p`
   margin-bottom: 1em;
 `;
 
-const Btn = styled.a`
+const Btn = styled.button`
   width: 210px;
   height: 50px;
   background: #282828;
@@ -40,6 +40,7 @@ const Btn = styled.a`
   color: white;
   font-style: normal;
   font-weight: 700;
+  cursor: pointer;
   font-size: 16px;
   text-decoration: none;
   margin-top: 50px;

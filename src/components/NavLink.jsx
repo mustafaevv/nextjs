@@ -21,10 +21,8 @@ const Links = styled.a`
   padding: 13px 20px;
   font-weight: 700;
   font-size: 16px;
-  background: ${({ pathname, link }) =>
-    pathname === link ? "#282828" : " #f9f9f9"};
-  color: ${({ pathname, link }) =>
-    pathname === link ? "#FFFFFF" : " #2c2c2c"};
+  background: ${({ pathname }) => (pathname ? "#282828" : " #f9f9f9")};
+  color: ${({ pathname }) => (pathname ? "#FFFFFF" : " #2c2c2c")};
   font-family: "Montserrat", sans-serif;
   border-radius: 30px;
   text-align: center;
@@ -48,18 +46,19 @@ const Title = styled.h1`
 
 const NavLink = () => {
   const { pathname } = useRouter();
+  console.log(pathname);
   return (
     <Div>
       <List>
         {links.map(({ name, link }) => (
           <li key={link}>
             <Link link={link} href={link}>
-              <Links pathname={pathname}>{name}</Links>
+              <Links pathname={pathname == link}>{name}</Links>
             </Link>
           </li>
         ))}
       </List>
-      <h1>Все пиццы</h1>
+      <Title>Все пиццы</Title>
     </Div>
   );
 };

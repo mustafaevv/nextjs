@@ -8,10 +8,6 @@ import Container from "../layout/Container";
 import CartItem from "../src/components/CartItem";
 import Title from "../src/components/Title";
 
-const Box = styled(Container)`
-  height: 100vh;
-`;
-
 const Content = styled.a`
   display: flex;
   align-items: center;
@@ -127,7 +123,7 @@ const Cart = () => {
   const count = items.reduce((acc, item) => acc + item.quantity, 0);
   return (
     <>
-      <Box>
+      <Container>
         <Link href="/">
           <Content>
             <Content>
@@ -171,7 +167,7 @@ const Cart = () => {
             </Info>
           )}
         </Main>
-      </Box>
+      </Container>
     </>
   );
 };
